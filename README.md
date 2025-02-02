@@ -26,6 +26,9 @@
 - Implementation of multi-image conditioning for TRELLIS-image model. ([#7](https://github.com/microsoft/TRELLIS/issues/7)). This is based on tuning-free algorithm without training a specialized model, so it may not give the best results for all input images.
 - Add Gaussian export in `app.py` and `example.py`. ([#40](https://github.com/microsoft/TRELLIS/issues/40))
 
+**02/01/2025**
+- Simple Windows installation & updated Gradio UI.
+
 <!-- TODO List -->
 ## 🚧 TODO List
 - [x] Release inference code and TRELLIS-image-large model
@@ -37,7 +40,7 @@
 ## 📦 Installation
 
 ### Prerequisites
-- **System**: The code is currently tested only on **Linux**.  For windows setup, you may refer to [#3](https://github.com/microsoft/TRELLIS/issues/3) (not fully tested).
+- **System**: For *windows* setup.
 - **Hardware**: An NVIDIA GPU with at least 16GB of memory is necessary. The code has been verified on NVIDIA A100 and A6000 GPUs.  
 - **Software**:   
   - The [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit-archive) is needed to compile certain submodules. The code has been tested with CUDA versions 11.8 and 12.2.  
@@ -46,42 +49,24 @@
 
 ### Installation Steps
 1. Clone the repo:
-    ```sh
-    git clone --recurse-submodules https://github.com/microsoft/TRELLIS.git
-    cd TRELLIS
-    ```
+```sh
+git clone --recurse-submodules https://github.com/MackinationsAi/Window_Trellis.git
+cd TRELLIS
+```
 
 2. Install the dependencies:
-    
-    **Before running the following command there are somethings to note:**
-    - By adding `--new-env`, a new conda environment named `trellis` will be created. If you want to use an existing conda environment, please remove this flag.
-    - By default the `trellis` environment will use pytorch 2.4.0 with CUDA 11.8. If you want to use a different version of CUDA (e.g., if you have CUDA Toolkit 12.2 installed and do not want to install another 11.8 version for submodule compilation), you can remove the `--new-env` flag and manually install the required dependencies. Refer to [PyTorch](https://pytorch.org/get-started/previous-versions/) for the installation command.
-    - If you have multiple CUDA Toolkit versions installed, `PATH` should be set to the correct version before running the command. For example, if you have CUDA Toolkit 11.8 and 12.2 installed, you should run `export PATH=/usr/local/cuda-11.8/bin:$PATH` before running the command.
-    - By default, the code uses the `flash-attn` backend for attention. For GPUs do not support `flash-attn` (e.g., NVIDIA V100), you can remove the `--flash-attn` flag to install `xformers` only and set the `ATTN_BACKEND` environment variable to `xformers` before running the code. See the [Minimal Example](#minimal-example) for more details.
-    - The installation may take a while due to the large number of dependencies. Please be patient. If you encounter any issues, you can try to install the dependencies one by one, specifying one flag at a time.
-    - If you encounter any issues during the installation, feel free to open an issue or contact us.
-    
-    Create a new conda environment named `trellis` and install the dependencies:
-    ```sh
-    . ./setup.sh --new-env --basic --xformers --flash-attn --diffoctreerast --spconv --mipgaussian --kaolin --nvdiffrast
-    ```
-    The detailed usage of `setup.sh` can be found by running `. ./setup.sh --help`.
-    ```sh
-    Usage: setup.sh [OPTIONS]
-    Options:
-        -h, --help              Display this help message
-        --new-env               Create a new conda environment
-        --basic                 Install basic dependencies
-        --xformers              Install xformers
-        --flash-attn            Install flash-attn
-        --diffoctreerast        Install diffoctreerast
-        --vox2seq               Install vox2seq
-        --spconv                Install spconv
-        --mipgaussian           Install mip-splatting
-        --kaolin                Install kaolin
-        --nvdiffrast            Install nvdiffrast
-        --demo                  Install all dependencies for demo
-    ```
+
+**Simply run the oc_install.bat file**
+```sh
+oc_install.bat
+```
+
+### Running Gradio WebUI
+
+After installing the dependencies, you can run the app by simply running the boot_trellis.bat file:
+```sh
+boot_trellis.bat
+```
 
 <!-- Pretrained Models -->
 ## 🤖 Pretrained Models
@@ -178,24 +163,6 @@ After running the code, you will get the following files:
 - `sample_mesh.mp4`: a video showing the mesh representation
 - `sample.glb`: a GLB file containing the extracted textured mesh
 - `sample.ply`: a PLY file containing the 3D Gaussian representation
-
-
-### Web Demo
-
-[app.py](app.py) provides a simple web demo for 3D asset generation. Since this demo is based on [Gradio](https://gradio.app/), additional dependencies are required:
-```sh
-. ./setup.sh --demo
-```
-
-After installing the dependencies, you can run the demo with the following command:
-```sh
-python app.py
-```
-
-Then, you can access the demo at the address shown in the terminal.
-
-***The web demo is also available on [Hugging Face Spaces](https://huggingface.co/spaces/JeffreyXiang/TRELLIS)!***
-
 
 <!-- Dataset -->
 ## 📚 Dataset
