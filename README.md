@@ -51,7 +51,7 @@
 1. Clone the repo:
 ```sh
 git clone --recurse-submodules https://github.com/MackinationsAi/Window_Trellis.git
-cd TRELLIS
+cd Window_Trellis
 ```
 
 2. Install the dependencies:
@@ -65,7 +65,7 @@ oc_install.bat
 
 After installing the dependencies, you can run the app by simply running the boot_trellis.bat file:
 ```sh
-boot_trellis.bat
+boot_window_trellis.bat
 ```
 
 <!-- Pretrained Models -->
