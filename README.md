@@ -19,15 +19,15 @@
 <!-- Updates -->
 ## ⏩ Updates
 
+**02/01/2025**
+- Simple Windows installation & updated Gradio UI.
+
 **12/26/2024**
 - Release [**TRELLIS-500K**](https://github.com/microsoft/TRELLIS#-dataset) dataset and toolkits for data preparation.
 
 **12/18/2024**
 - Implementation of multi-image conditioning for TRELLIS-image model. ([#7](https://github.com/microsoft/TRELLIS/issues/7)). This is based on tuning-free algorithm without training a specialized model, so it may not give the best results for all input images.
 - Add Gaussian export in `app.py` and `example.py`. ([#40](https://github.com/microsoft/TRELLIS/issues/40))
-
-**02/01/2025**
-- Simple Windows installation & updated Gradio UI.
 
 <!-- TODO List -->
 ## 🚧 TODO List
