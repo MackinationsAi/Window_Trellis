@@ -16,7 +16,7 @@ oc_install.bat
 
 ### Running Gradio WebUI
 
-After installing the dependencies, you can run the app by simply running the boot_trellis.bat file:
+After installing the dependencies, you can run the app by simply running the boot_window_trellis.bat file:
 ```sh
 boot_window_trellis.bat
 ```
