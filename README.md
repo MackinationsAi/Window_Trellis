@@ -1,3 +1,27 @@
+![UI_Example](https://github.com/user-attachments/assets/dd4d6688-650c-4673-bd92-918d7e36a7c9)
+
+### Installation Steps
+1. Clone the repo:
+```sh
+git clone --recurse-submodules https://github.com/MackinationsAi/Window_Trellis.git
+cd Window_Trellis
+```
+
+2. Install the dependencies:
+
+**Simply run the oc_install.bat file**
+```sh
+oc_install.bat
+```
+
+### Running Gradio WebUI
+
+After installing the dependencies, you can run the app by simply running the boot_trellis.bat file:
+```sh
+boot_window_trellis.bat
+```
+_______________________
+
 <img src="assets/logo.webp" width="100%" align="center">
 <h1 align="center">Structured 3D Latents<br>for Scalable and Versatile 3D Generation</h1>
 <p align="center"><a href="https://arxiv.org/abs/2412.01506"><img src='https://img.shields.io/badge/arXiv-Paper-red?logo=arxiv&logoColor=white' alt='arXiv'></a>
@@ -46,27 +70,6 @@
   - The [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit-archive) is needed to compile certain submodules. The code has been tested with CUDA versions 11.8 and 12.2.  
   - [Conda](https://docs.anaconda.com/miniconda/install/#quick-command-line-install) is recommended for managing dependencies.  
   - Python version 3.8 or higher is required. 
-
-### Installation Steps
-1. Clone the repo:
-```sh
-git clone --recurse-submodules https://github.com/MackinationsAi/Window_Trellis.git
-cd Window_Trellis
-```
-
-2. Install the dependencies:
-
-**Simply run the oc_install.bat file**
-```sh
-oc_install.bat
-```
-
-### Running Gradio WebUI
-
-After installing the dependencies, you can run the app by simply running the boot_trellis.bat file:
-```sh
-boot_window_trellis.bat
-```
 
 <!-- Pretrained Models -->
 ## 🤖 Pretrained Models
