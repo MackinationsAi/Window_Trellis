@@ -453,6 +453,6 @@ TRELLIS = ui(default_theme)
 if __name__ == "__main__":
     pipeline = TrellisImageTo3DPipeline.from_pretrained("JeffreyXiang/TRELLIS-image-large")
     pipeline.cuda()
-    TRELLIS.launch(server_name='0.0.0.0', share=False)
+    TRELLIS.launch(server_name='127.0.0.1', share=False)
 else:
     print("Failed to create the TRELLIS Gradio interface.")
